@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site Portfolio Marcel Pouvreau Backend Developer">
+  <title>Portfolio - Marcel Pouvreau</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  // Récupérer les éléments qui ont des attributs data-en et data-fr
+  const elements = document.querySelectorAll('[data-en], [data-fr]');
+
+      changeLanguage('fr');
+  // Fonction pour changer la langue
+  function changeLanguage(language) {
+    elements.forEach(element => {
+      // Sélectionner le texte en fonction de la langue
+      const text = language === 'en' ? element.getAttribute('data-en') : element.getAttribute('data-fr');
+      
+      // Appliquer le texte à l'élément
+      if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+        // Si c'est un champ de formulaire
+        element.setAttribute('value', text);
+      } else {
+        // Si c'est un élément de texte normal
+        element.textContent = text;
+      }
+    });
+  }
+
+  // Écouter le clic sur le bouton de changement de langue
+  const languageButton = document.getElementById('btnLanguage');
+  languageButton.addEventListener('click', function() {
+    // Alternance entre anglais et français
+    const currentLanguage = languageButton.getAttribute('data-language');
+    const newLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+    languageButton.setAttribute('data-language', newLanguage);
+
+    // Changer la langue pour tous les éléments
+    changeLanguage(newLanguage);
+  });
+});
+  </script>
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">Marcel Pouvreau</a>
+
+    <i class='bx bx-menu' id="menu-icon"></i>
+
+    <nav class="navbar">
+      <a href="#home" class="active" data-en="Home" data-fr="Accueil"></a>
+      <a href="#about" data-en="About" data-fr="À Propos"></a>
+      <a href="#skills" data-en="Technical Skills" data-fr="Compétences Techniques"></a>
+      <a href="#portfolio" data-en="Portfolio" data-fr="Portfolio"></a>
+      <a href="#contact" data-en="Contact" data-fr="Contact"></a>
+      <a href="#accueil" id="btnLanguage">
+        <img src="" alt=""> <span > FR | EN</span>
+      </a>
+    </nav>
+  </header>
+
+  <section class="home" id="home">
+    <div class="home-content">
+      <h3 data-en="Hello, Its Me" data-fr="Bonjour, c'est moi"></h3>
+      <h1>Marcel Pouvreau</h1>
+      <h3 data-en="And I'm a Web Developer" data-fr="Et je suis Développeur Web"><span class="multiple-text" ></span></h3>
+      <p data-en="Welcome to my portfolio. Here you will find my achievements, my resume, and my different profiles on social networks." data-fr="Bienvenue sur mon portfolio. Vous y trouverez mes réalisations, mon CV et mes différents profils sur les réseaux sociaux."></p>
+      <div class="social-media">
+        <!-- <a href="https://www.facebook.com/marcel.pouvreau"><i class='bx bxl-facebook' ></i></a> -->
+        <a href="https://github.com/marcelpouvreau"><i class='bx bxl-github' ></i></a>
+        <a href="https://www.linkedin.com/in/marcel-pouvreau/"><i class='bx bxl-linkedin' ></i></a>
+        <a href="https://www.instagram.com/marcelpouvreau/"><i class='bx bxl-instagram' ></i></a>
+      </div>
+      <a href="/CVPdf/CV Marcel - DEVELOPPEUR WEB.pdf" class="btn" download data-en="Download CV" data-fr="Télécharger le CV">Download CV</a>
+    </div>
+    <div class="home-img">
+      <img src="images/logo.png" alt="">
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="images/home.png" alt="">
+    </div>
+
+    <div class="about-content">
+      <h2 class="heading" data-en="About" data-fr="À Propos">About <span>Me</span></h2>
+      <p class="multiple-text" data-en="I graduated in Architecture and Urbanism in Brazil and came to France in 2017 with my wife to experience living in a foreign country. After working for four years at a used car company, I wanted to give my professional career a boost and decided to enroll in a web development training program. This training allowed me to learn some web programming languages such as JavaScript, React, PHP, Symfony, and database management using MySQL." data-fr="Après l'obtention de mon diplôme en architecture et urbanisme au Brésil, j'ai rejoint la France en 2017 avec ma femme. Ayant travaillé pendant quatre ans dans la vente de voitures d'occasion, j'ai décidé de booster ma carrière en suivant une formation en développement web. Cette expérience m'a permis de maîtriser des langages tels que JavaScript, React, PHP, Symfony, ainsi que la gestion de bases de données avec MySQL. Fort de ces compétences, je suis désormais prêt à évoluer dans le domaine du développement web."></p>
+      <p></p>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <h2 class="heading" data-en="My Technical Skills" data-fr="Mes Compétences Techniques">My <span>Technical Skills</span></h2>
+
+    <div class="skills-container">
+      <div class="skills-box">
+        <i class='bx bxl-html5' ></i><i class='bx bxl-css3' ></i>
+        <h3 data-en="HTML and CSS" data-fr="HTML et CSS">HTML and CSS</h3>
+        <p data-en="HTML is used to create the structure of a web page, while CSS is used to provide the visual style and layout. Together, they are the foundation of web design and development, allowing developers to create attractive and responsive web pages that are accessible on different devices." data-fr="HTML est utilisé pour créer la structure d'une page web, tandis que CSS est utilisé pour fournir le style visuel et la mise en page. Ensemble, ils constituent la base de la conception et du développement web, permettant aux développeurs de créer des pages web attrayantes et réactives accessibles sur différents appareils."></p>
+      </div>
+ 
+      <div class="skills-box">
+        <i class='bx bxl-php' ></i>
+        <h3 data-en="PHP and Symfony as Framework" data-fr="PHP et Symfony en tant que Framework">PHP and Symfony as Framework</h3>
+        <p data-en="PHP is a server-side scripting
+
+ language used for web development. It's a popular choice for creating dynamic websites and web applications. Symfony is a PHP-based web application framework that provides a set of tools and components for building web applications. Using Symfony can help streamline the development process and improve code quality. Together, PHP and Symfony can be a powerful combination for building web applications." data-fr="PHP est un langage de script côté serveur utilisé pour le développement web. C'est un choix populaire pour la création de sites web dynamiques et d'applications web. Symfony est un framework d'application web basé sur PHP qui fournit un ensemble d'outils et de composants pour la construction d'applications web. Utiliser Symfony peut simplifier le processus de développement et améliorer la qualité du code. Ensemble, PHP et Symfony peuvent former une combinaison puissante pour la création d'applications web."></p>
+      </div>
+
+      <div class="skills-box">
+        <i class='bx bxl-bootstrap'></i>
+        <h3 data-en="Bootstrap" data-fr="Bootstrap">Bootstrap</h3>
+        <p data-en="Bootstrap is a front-end web development framework that provides pre-built HTML, CSS, and JavaScript components. It's designed to help developers create responsive and mobile-first web pages quickly and easily. Bootstrap includes a wide range of components that can be customized to fit the needs of a project and has built-in support for responsive design. It's widely used and has a large community of developers and designers who contribute to its development and support." data-fr="Bootstrap est un framework de développement web front-end qui fournit des composants HTML, CSS et JavaScript pré-construits. Il est conçu pour aider les développeurs à créer rapidement et facilement des pages web réactives et adaptées aux mobiles. Bootstrap inclut une large gamme de composants pouvant être personnalisés pour répondre aux besoins d'un projet et dispose d'une prise en charge intégrée du design réactif. "></p>
+      </div> 
+
+      <div class="skills-box">
+        <i class='bx bxl-javascript' ></i>
+        <h3 data-en="JavaScript" data-fr="JavaScript">JavaScript</h3>
+        <p data-en="JavaScript is a popular scripting language used for web development. React is a JavaScript library used for building user interfaces. It provides a component-based approach to building UIs, which can help improve code reusability and maintainability. Using React can also help improve website performance, as it's designed to efficiently update the UI when data changes. Together, JavaScript and React can be a powerful combination for building dynamic and responsive web applications." data-fr="JavaScript est un langage de programmation polyvalent, interprété et orienté objet, principalement utilisé dans le développement web pour créer des pages interactives. Il permet de manipuler le contenu HTML, le style CSS, de gérer des événements, d'effectuer des requêtes réseau, et d'interagir avec le DOM. JavaScript est essentiel pour le développement d'interfaces utilisateur dynamiques et est utilisé à la fois côté client dans les navigateurs et côté serveur avec des environnements comme Node.js."></p>
+      </div>
+
+      <div class="skills-box">
+        <i class='bx bx-data' ></i>
+        <h3 data-en="MySQL" data-fr="MySQL">MySQL</h3>
+        <p data-en="MySQL is an open-source relational database management system used for web development. It uses SQL to manage data and includes features like transactions and triggers. MySQL is scalable and can handle large volumes of data. Its open-source nature and large community of developers make it a popular choice for web developers looking for a reliable database management system." data-fr="MySQL est un système de gestion de base de données relationnelle open-source utilisé pour le développement web. Il utilise SQL pour gérer les données et inclut des fonctionnalités telles que les transactions et les déclencheurs. MySQL est scalable et peut gérer de gros volumes de données. Sa nature open-source et sa grande communauté de développeurs en font un choix populaire pour les développeurs web à la recherche d'un système de gestion de base de données fiable."></p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <h2 class="heading" data-en="Latest Project" data-fr="Derniers Projets">Latest <span>Project</span></h2>
+
+    <div class="portfolio-container">
+      <div class="portfolio-box" style="height: 350px;">
+        <img src="images/toDoList_web_app.png" alt="" style="object-fit: cover;">
+        <div class="portfolio-layer">
+          <h4>To Do List Web App</h4>
+          <p data-en="Task list application created using PHP and styled with CSS. I integrated JavaScript to include various features, such as the ability to select or deselect tasks. For storing and managing data, I used MySQL in conjunction with PHPMyAdmin." data-fr="Application de liste de tâches produite en utilisant PHP et stylisée avec CSS. J'ai intégré JavaScript pour inclure diverses fonctionnalités, notamment la possibilité de sélectionner ou désélectionner des tâches. Pour stocker et gérer les données, j'ai utilisé MySQL en conjonction avec PHPMyAdmin."></p>
+          <p class="warning" data-en="The following link redirects to the GitHub repository." data-fr="Le lien suivant redirige vers le dépôt GitHub."></p>
+          <a href="https://github.com/marcelpouvreau/todo-list"><i class='bx bx-link-external' ></i></a>
+        </div>
+      </div>
+
+      <div class="portfolio-box" style="height: 350px;">
+        <img src="images/schoolManage.png" alt="" style="object-fit: cover;">
+        <div class="portfolio-layer">
+          <h4 data-en="School Manage System" data-fr="Système de Gestion Scolaire">School Manage System</h4>
+          <p data-en="Web application for school management, allowing you to create and administer profiles for students, teachers, and enrollment office users."
+            data-fr="Application Web pour la gestion scolaire, vous permettant de créer et administrer les profils des étudiants, des enseignants et des utilisateurs du bureau des inscriptions.">
+            Web application for school management, allowing you to create and administer profiles for students, teachers, and enrollment office users.
+          </p>
+          <p data-en="You can test it using 'Username: FreeAccess' and 'Password: 123'"
+            data-fr="Vous pouvez tester avec 'Nom d'utilisateur: FreeAccess' et 'Mot de passe: 123'">
+            You can test it using 'Username: FreeAccess' and 'Password: 123'
+          </p>
+          <a href="https://schoolmanage.dev-pouvreau.com/">
+            <i class='bx bx-link-external'></i>
+          </a>
+        </div>
+      </div>
+
+<!-- Portfolio Box 2 -->
+      <div class="portfolio-box" style="height: 350px;">
+        <img src="images/work_in_progress.png" alt=""  style="object-fit: scale-down;">
+        <div class="portfolio-layer">
+          <h4 data-en="Work in Progress" data-fr="Travail en Cours">Work in Progress</h4>
+          <a href="#">
+            <i class='bx bx-link-external'></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+<!-- Section Contact -->
+<section class="contact" id="contact">
+  <h2 class="heading" data-en="Contact Me!" data-fr="Me Contacter !">Contact Me!</h2>
+
+  <form action="mailto: marcel.pouvreau@gmail.com" method="POST">
+    <input type="submit" value="Send Message" class="btn" data-en="Send Message" data-fr="Envoyer un mail">
+  </form>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-text">
+    <p>
+      Copyright &copy; 2023 | Marcel Pouvreau
+    </p>
+  </div>
+
+  <div class="footer-iconTop">
+    <a href="#home">
+      <i class='bx bx-up-arrow-alt'></i>
+    </a>
+  </div>
+</footer>
+
+<!-- ... autres balises body ... -->
+
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+  <script src="js/script.js"></script>
+  
+</body>
+</html>
