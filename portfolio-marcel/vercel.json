@@ -1,4 +1,9 @@
 {
   "version": 2,
-  "public": "portfolio-marcel"
+  "builds": [
+    { "src": "portfolio-marcel/**/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "portfolio-marcel/$1" }
+  ]
 }
